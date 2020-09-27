@@ -1,12 +1,9 @@
-CREATE DATABASE bundle;
-
-USE bundle;
-
- CREATE TABLE bundles (
-  id INTEGER auto_increment IS NOT NULL,
-  name TEXT IS NOT NULL,
-  value INTEGER IS NOT NULL,
-  logoURL TEXT IS NOT NULL,
-  helper VARCHAR(16) IS NOT NULL,
-  minPurch FLOAT IS NOT NULL
+CREATE TABLE bundle (
+  id TINYINT auto_increment,
+  name VARCHAR(100),
+  value SMALLINT,
+  logoURL VARCHAR(2000),
+  helper VARCHAR(16),
+  minPurch TINYINT,
+  PRIMARY KEY(id)
 );
