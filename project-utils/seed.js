@@ -728,3 +728,4 @@ seed()
   console.log(err);
 });
 
+module.exports = seed;
