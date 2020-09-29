@@ -1,7 +1,7 @@
 const db = require('../db/index.js');
 const seed = require('../project-utils/seed.js');
 const Bundles = require('../db/models/bundles.model.js');
-require('iconv-lite').encodingExists('foo')
+require('iconv-lite').encodingExists('foo');
 
 describe('database seeding', () => {
   test('it should have 100 entries', () => {

@@ -21,4 +21,7 @@ db.sync({ force: false })
     .then((results) => {
       console.log('results: ', results.dataValues);
     });
+  })
+  .catch((err) => {
+    console.log('your error: ', err);
   });

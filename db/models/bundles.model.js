@@ -1,5 +1,4 @@
-const Sequelize = require('sequelize');
-const DataTypes = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const db = require ('../index.js');
 
 const Bundle = db.define(
@@ -10,7 +9,7 @@ const Bundle = db.define(
       primaryKey: true,
     },
     name: {
-      type: DataTypes.STRING(60),
+      type: DataTypes.STRING(68),
     },
     value: {
       type: DataTypes.INTEGER(3).UNSIGNED,
