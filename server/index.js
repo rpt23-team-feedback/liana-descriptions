@@ -30,7 +30,7 @@ db.sync({ force: false })
     console.log('your error: ', err);
   });
 
-  // GET routing
+// GET routing
 app.get('/bundleInfo/:bundleId', (req, res) => {
   const id = req.params.bundleId;
   return Bundles.findOne({
@@ -40,14 +40,18 @@ app.get('/bundleInfo/:bundleId', (req, res) => {
   })
   .then((results) => {
     if (results) {
-      console.log(results.dataValues);
       const bundle = results.dataValues;
       return bundle;
     } else {
-      return null;
+      res.status(404).send('no such bundle, try a bundle from 1 - 100');
     }
   })
   .then((bundle) => {
-    res.send(JSON.stringify(bundle));
+    if (bundle) {
+      res.send(JSON.stringify(bundle));
+    }
   })
+  .catch((err) => {
+    res.status(500).send('something went wrong on our end; wait a bit & try again');
+  });
 });
