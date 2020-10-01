@@ -6,12 +6,15 @@ const Bundles = require('../db/models/bundles.model.js');
 const app = express();
 const port = 3663;
 
-app.use(morgan);
+app.use(morgan('dev'));
 app.use(express.urlencoded({
   extended: true,
 }));
 
-db.sync({ force: false })
+db.sync({
+  force: false,
+  logging: false
+})
   .then(() => {
     console.log('db synced: ', db);
     app.listen(port, () => {
