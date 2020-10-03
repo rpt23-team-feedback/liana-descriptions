@@ -1,7 +1,7 @@
 const express = require('express');
-const db = require('../db/index.js');
+const db = require('../db/index');
 const morgan = require('morgan');
-const Bundles = require('../db/models/bundles.model.js');
+const Bundles = require('../db/models/bundles.model');
 
 const app = express();
 

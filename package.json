@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --forceExit --collectCoverage",
     "server-dev": "nodemon server/index.js",
     "seed": "node project-utils/seed.js"
   },
