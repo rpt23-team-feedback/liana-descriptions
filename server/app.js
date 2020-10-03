@@ -4,7 +4,6 @@ const morgan = require('morgan');
 const Bundles = require('../db/models/bundles.model.js');
 
 const app = express();
-const port = 3663;
 
 app.use(morgan('dev'));
 app.use(express.urlencoded({
@@ -36,3 +35,5 @@ app.get('/bundleInfo/:bundleId', (req, res) => {
     res.status(500).send('something went wrong on our end; wait a bit & try again');
   });
 });
+
+module.exports = app;

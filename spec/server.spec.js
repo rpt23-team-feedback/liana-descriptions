@@ -1,6 +1,4 @@
-require('iconv-lite').encodingExists('foo')
-
-describe('basic rendering', () => {
+describe('basic routing', () => {
   test('it loads', () => {
     expect(true).toBe(true);
   })
