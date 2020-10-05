@@ -4,9 +4,14 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest --forceExit --collectCoverage",
+    "build": "webpack --mode production",
+    "seed": "node project-utils/seed.js",
     "server-dev": "nodemon server/index.js",
-    "seed": "node project-utils/seed.js"
+    "test": "jest --forceExit",
+    "test-cov": "jest --forceExit --collectCoverage",
+    "test-client": "jest src spec/client.spec",
+    "test-db": "jest src spec/db.spec",
+    "test-server": "jest src spec/server.spec"
   },
   "repository": {
     "type": "git",
@@ -27,6 +32,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sequelize": "^6.3.5",
     "supertest": "^5.0.0"
   },
@@ -34,6 +41,14 @@
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
-    "jest": "^26.4.2"
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "jest": "^26.4.2",
+    "postcss": "^8.1.1",
+    "postcss-loader": "^4.0.3",
+    "style-loader": "^1.3.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }
