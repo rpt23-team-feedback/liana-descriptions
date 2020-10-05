@@ -1,5 +1,4 @@
 const db = require('../db/index');
-const Bundles = require('../db/models/bundles.model');
 const app = require('./app');
 
 const port = 3663;
