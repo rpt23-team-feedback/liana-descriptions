@@ -1,5 +1,5 @@
-const db = require('../db/index.js');
-const Bundles = require('../db/models/bundles.model.js');
+const db = require('../db/index');
+const Bundles = require('../db/models/bundles.model');
 
 
 const seeds = [
@@ -715,14 +715,14 @@ const seed = () => {
         fields: ['name', 'value', 'logoURL', 'helper', 'minimum'],
       });
     } else {
-      console.log(`db populated: ${results.name} is the last bundle name`);
+      return `db populated: ${results.name} is the last bundle name`;
     }
   });
 };
 
 seed()
 .then(() => {
-  process.exit();
+  db.close();
 })
 .catch((err) => {
   console.log(err);
