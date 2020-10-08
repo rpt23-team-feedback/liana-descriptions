@@ -101,3 +101,6 @@ typings/
 
 # seeding files
 pollinator.js
+
+# working bundle
+client/dist/bundle.js

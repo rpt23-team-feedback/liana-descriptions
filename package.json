@@ -8,11 +8,12 @@
     "react-dev": "webpack -d --watch",
     "seed": "node project-utils/seed.js",
     "server-dev": "nodemon server/index.js",
+    "start": "node server/index.js",
     "test": "jest --forceExit",
     "test-cov": "jest --forceExit --collectCoverage",
-    "test-client": "jest src spec/client.spec",
-    "test-db": "jest src spec/db.spec",
-    "test-server": "jest src spec/server.spec"
+    "test-client": "jest src client/spec/client.spec",
+    "test-db": "jest src db/spec/db.spec",
+    "test-server": "jest src server/spec/server.spec"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "sequelize": "^6.3.5",
     "supertest": "^5.0.0"
   },
@@ -49,6 +51,7 @@
     "jest": "^26.4.2",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "react-test-renderer": "^16.13.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   }

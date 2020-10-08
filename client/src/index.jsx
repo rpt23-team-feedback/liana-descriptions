@@ -6,6 +6,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       online: true,
+      name: '',
+      firstGame: '',
+      secondGame: '',
+      thirdGame: '',
+      charities: [],
+      value: '',
+      min: '',
+      numSold: '',
     }
   }
 
@@ -23,4 +31,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('descriptions'));
