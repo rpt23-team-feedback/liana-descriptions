@@ -1,6 +1,6 @@
-const db = require('../db/index');
-const seed = require('../project-utils/seed');
-const Bundles = require('../db/models/bundles.model');
+const db = require('../index');
+const seed = require('../../project-utils/seed');
+const Bundles = require('../models/bundles.model');
 require('mysql2/node_modules/iconv-lite').encodingExists('foo');
 
 describe('database seeding', () => {
