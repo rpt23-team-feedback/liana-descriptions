@@ -4,9 +4,12 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "test": "jest --forceExit --collectCoverage",
+    "test": "jest --forceExit",
     "server-dev": "nodemon server/index.js",
-    "seed": "node project-utils/seed.js"
+    "seed": "node project-utils/seed.js",
+    "build": "webpack --mode production",
+    "react-dev": "webpack -d --watch",
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
