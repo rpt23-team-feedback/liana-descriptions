@@ -7,6 +7,7 @@ const Bundle = db.define(
     id: {
       type: DataTypes.INTEGER(3).UNSIGNED,
       primaryKey: true,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING(68),
@@ -26,6 +27,7 @@ const Bundle = db.define(
   },
   {
     timestamps: false,
+    logging: false,
   }
 );
 

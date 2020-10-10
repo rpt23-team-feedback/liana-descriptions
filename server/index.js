@@ -8,7 +8,6 @@ db.sync({
   logging: false
 })
   .then(() => {
-    console.log('db synced: ', db);
     app.listen(port, () => {
       console.log(`dockside at port ${port}`);
     })
