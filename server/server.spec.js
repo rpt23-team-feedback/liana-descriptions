@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../server/app.js');
+const app = require('./app.js');
 require('mysql2/node_modules/iconv-lite').encodingExists('foo');
 
 describe('test the bundleId routing', () => {

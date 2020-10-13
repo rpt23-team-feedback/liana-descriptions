@@ -9,6 +9,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({
   extended: true,
 }));
+app.use(express.static(__dirname + '/../client/dist'));
 
 // GET routing
 app.get('/bundleInfo/:bundleId', (req, res) => {
@@ -20,15 +21,15 @@ app.get('/bundleInfo/:bundleId', (req, res) => {
   })
   .then((results) => {
     if (results) {
-      const bundle = results.dataValues;
-      return bundle;
+      return bundle = results.dataValues;
     } else {
       res.status(404).send('no such bundle, try a bundle from 1 - 100');
     }
   })
   .then((bundle) => {
     if (bundle) {
-      res.send(JSON.stringify(bundle));
+      const strung = JSON.stringify(bundle);
+      res.send(strung);
     }
   })
   .catch((err) => {
