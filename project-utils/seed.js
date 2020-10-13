@@ -1,7 +1,6 @@
 const db = require('../db/index');
 const Bundles = require('../db/models/bundles.model');
 
-
 const seeds = [
   {
     name: 'bale up',
@@ -702,30 +701,33 @@ const seeds = [
     logoURL: 'https://unsplash.com/photos/YcfCXxo7rpc',
     helper: '@causam',
     minimum: 6
-  }
+  },
 ];
 
 const seed = () => {
-  return Bundles.findOne({
-    where: { id: 100 },
+  return db.sync({ force: true })
+  .then(() => {
+    return Bundles.bulkCreate(seeds, {
+      fields: ['name', 'value', 'logoURL', 'helper', 'minimum'],
+    });
   })
-  .then((results) => {
-    if (results === null) {
-      return Bundles.bulkCreate(seeds, {
-        fields: ['name', 'value', 'logoURL', 'helper', 'minimum'],
-      });
-    } else {
-      return `db populated: ${results.name} is the last bundle name`;
-    }
+  .then(() => {
+    db.close();
+  })
+  .then(() => {
+    console.log('db closed');
+  })
+  .catch((err) => {
+    console.log('your err: ', err);
   });
 };
 
 seed()
 .then(() => {
-  db.close();
-})
-.catch((err) => {
-  console.log(err);
+  console.log('seeded');
 });
 
-module.exports = seed;
+module.exports = {
+  seed,
+  seeds,
+};

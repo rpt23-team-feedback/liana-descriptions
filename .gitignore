@@ -99,5 +99,5 @@ typings/
 # TernJS port file
 .tern-port
 
-# seeding files
-pollinator.js
+# bundle
+client/dist/bundle.js
