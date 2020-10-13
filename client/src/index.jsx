@@ -8,9 +8,11 @@ class Test extends Component {
   render() {
     const { online } = this.state;
 
-    return (<div>
-      <h1>descriptions</h1>
-    </div>);
+    return (
+      <div>
+        <h1>descriptions</h1>
+      </div>
+    );
   }
 };
 

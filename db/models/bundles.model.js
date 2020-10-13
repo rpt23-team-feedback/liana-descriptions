@@ -23,12 +23,12 @@ const Bundle = db.define(
     },
     minimum: {
       type: DataTypes.INTEGER(1).UNSIGNED,
-    }
+    },
   },
   {
     timestamps: false,
     logging: false,
-  }
+  },
 );
 
 module.exports = Bundle;

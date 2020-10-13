@@ -1,7 +1,6 @@
 const db = require('../db/index');
 const Bundles = require('../db/models/bundles.model');
 
-
 const seeds = [
   {
     name: 'bale up',
@@ -702,7 +701,7 @@ const seeds = [
     logoURL: 'https://unsplash.com/photos/YcfCXxo7rpc',
     helper: '@causam',
     minimum: 6
-  }
+  },
 ];
 
 const seed = () => {
@@ -726,9 +725,6 @@ const seed = () => {
 seed()
 .then(() => {
   console.log('seeded');
-})
-.catch((err) => {
-  console.log('your err: ', err);
 });
 
 module.exports = {
