@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 class Test extends Component {
   state = {
@@ -15,5 +16,7 @@ class Test extends Component {
     );
   }
 };
+
+ReactDOM.render(<Test />, document.getElementById('descriptions'));
 
 export default Test;
