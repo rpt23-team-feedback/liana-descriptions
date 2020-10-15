@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Entry from './Entry.jsx';
 import Home from './Home.jsx';
 
@@ -13,6 +13,7 @@ class Main extends Component {
       <main>
         <Switch>
           <Route exact path='/' component={Home} />
+          {/* <Redirect exact from='/' to='/1' /> */}
           <Route path='/:id' component={Entry} />
         </Switch>
       </main>
