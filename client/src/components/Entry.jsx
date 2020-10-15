@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 class Entry extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Entry extends React.Component {
   render () {
     return (<div>
       <h1>descriptions</h1>
-      <div>{(this.state.online) ? 'we\'re online' : 'we\'re offline'}</div>
+      <div>welcome to bundle {this.props.match.params.id}</div>
       <div className="blurb">
         Get the *bundle name*, so that you can play your way through *tier 2 game name*, *highest tier game name*, *second tier 2 game name*, plus several more. Even better, your payment will go toward *charities for this bundle*.
       </div>
@@ -31,4 +32,4 @@ class Entry extends React.Component {
   }
 }
 
-ReactDOM.render(<Entry />, document.getElementById('descriptions'));
+export default Entry;
