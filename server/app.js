@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('../db/index');
 const morgan = require('morgan');
+const path = require('path');
 const Bundles = require('../db/models/bundles.model');
 
 const app = express();
@@ -35,6 +36,10 @@ app.get('/bundleInfo/:bundleId', (req, res) => {
   .catch((err) => {
     res.status(500).send('something went wrong on our end; wait a bit & try again');
   });
+});
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
 });
 
 module.exports = app;
