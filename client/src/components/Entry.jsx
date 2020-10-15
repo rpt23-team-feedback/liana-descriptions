@@ -6,7 +6,7 @@ class Entry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.match.params.id,
+      id: Number(this.props.match.params.id),
       error: false,
       name: '',
       firstGame: '',
@@ -26,26 +26,27 @@ class Entry extends React.Component {
     const config = {
       url: `/bundleInfo/${this.state.id}`,
     }
-    return axios(config)
-    .then(({ data }) => {
-      this.setState({
-        helper: data.helper,
-        logoURL: data.logoURL,
-        name: data.name,
-        min: data.minimum,
-        value: data.value,
+    if (this.state.id >= 1 && this.state.id <= 100) {
+      return axios(config)
+      .then(({ data }) => {
+        this.setState({
+          helper: data.helper,
+          logoURL: data.logoURL,
+          name: data.name,
+          min: data.minimum,
+          value: data.value,
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          error: true,
+        });
       });
-    })
-    .catch((err) => {
-      console.log('err: ', err);
-      this.setState({
-        error: true,
-      });
-    });
+    }
   }
 
   render () {
-    if (this.state.error) {
+    if (this.state.error || this.state.id < 1 || this.state.id > 100 || this.state.id !== this.state.id) {
       return (
         <div>
           <main>please enter a valid bundle ID (1 - 100) in the URL path</main>
