@@ -24,7 +24,7 @@ class Entry extends React.Component {
 
   componentDidMount() {
     const config = {
-      url: `/bundleInfo/${this.state.id}`,
+      url: `http://localhost:3663/bundleInfo/${this.state.id}`,
     }
     if (this.state.id >= 1 && this.state.id <= 100) {
       return axios(config)

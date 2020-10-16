@@ -11,6 +11,10 @@ app.use(express.urlencoded({
   extended: true,
 }));
 app.use(express.static(__dirname + '/../client/dist'));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 // GET routing
 app.get('/bundleInfo/:bundleId', (req, res) => {
