@@ -10,7 +10,7 @@ CREATE TABLE bundles (
   id TINYINT(1) auto_increment,
   name VARCHAR(68),
   value TINYINT(1) UNSIGNED,
-  logoURL VARCHAR(2000),
+  logoURL VARCHAR(101),
   helper VARCHAR(16),
   minimum TINYINT(1) UNSIGNED,
   PRIMARY KEY(id)

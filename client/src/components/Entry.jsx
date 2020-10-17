@@ -17,8 +17,9 @@ class Entry extends React.Component {
       min: 1,
       numSold: 'Many',
       helper: `@num${this.props.match.params.id}helper`,
-      logoURL: 'img !found',
+      logoURL: 'https://mg-fec-desc-images.s3-us-west-1.amazonaws.com/imgnotfound.png',
       topCost: '',
+      countdown: '',
     }
   }
 
@@ -70,6 +71,7 @@ class Entry extends React.Component {
     return (<div>
       <h1>descriptions</h1>
       <div>welcome to bundle {this.props.match.params.id}</div>
+      <img src={this.state.logoURL} height="150" width="300"></img>
       <div className="blurb">
         Get the humble {this.state.name} bundle, so that you can play your way through {this.state.firstGame}, {this.state.secondGame}, {this.state.thirdGame}, plus several more. Even better, your payment will go toward {this.state.charities.join(', ')}.
       </div>
