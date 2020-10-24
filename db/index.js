@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize ('bundle', 'root', '', {
+const db = new Sequelize ('hbdesc', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
   logging: false,

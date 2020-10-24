@@ -101,3 +101,9 @@ typings/
 
 # bundle
 client/dist/bundle.js
+
+# image storage
+/images
+
+# pollinator
+pollinator.js

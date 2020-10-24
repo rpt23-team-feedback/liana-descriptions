@@ -16,13 +16,16 @@ const Bundle = db.define(
       type: DataTypes.INTEGER(3).UNSIGNED,
     },
     logoURL: {
-      type: DataTypes.STRING(2000),
+      type: DataTypes.STRING(101),
     },
     helper: {
       type: DataTypes.STRING(16),
     },
     minimum: {
       type: DataTypes.INTEGER(1).UNSIGNED,
+    },
+    timesUp: {
+      type: DataTypes.STRING(10),
     },
   },
   {
