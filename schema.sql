@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS bundle;
+DROP DATABASE IF EXISTS hbdesc;
 
-CREATE DATABASE bundle;
+CREATE DATABASE hbdesc;
 
-USE bundle;
+USE hbdesc;
 
 DROP TABLE IF EXISTS bundles;
 
@@ -13,6 +13,7 @@ CREATE TABLE bundles (
   logoURL VARCHAR(101),
   helper VARCHAR(16),
   minimum TINYINT(1) UNSIGNED,
+  timesUp varchar(10),
   PRIMARY KEY(id)
 );
 

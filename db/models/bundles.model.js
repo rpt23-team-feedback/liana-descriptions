@@ -24,6 +24,9 @@ const Bundle = db.define(
     minimum: {
       type: DataTypes.INTEGER(1).UNSIGNED,
     },
+    timesUp: {
+      type: DataTypes.STRING(10),
+    },
   },
   {
     timestamps: false,
