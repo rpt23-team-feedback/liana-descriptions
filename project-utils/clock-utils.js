@@ -24,9 +24,6 @@ const convertSeconds = (n) => {
   return convertedTimes;
 };
 
-
-convertSeconds(getSecondsTo('2020-11-15 01:02:45'));
-
 module.exports = {
   getSecondsTo,
   convertSeconds,
