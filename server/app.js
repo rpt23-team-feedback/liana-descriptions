@@ -42,9 +42,6 @@ app.get('/bundleInfo/:bundleId', (req, res) => {
 
 app.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
-})
-.catch((err) => {
-  res.status(500).send('something went wrong on our end; wait a bit & try again');
 });
 
 module.exports = app;
