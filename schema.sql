@@ -13,7 +13,7 @@ CREATE TABLE bundles (
   logoURL VARCHAR(101),
   helper VARCHAR(16),
   minimum TINYINT(1) UNSIGNED,
-  timesUp VARCHAR(10),
+  timesUp VARCHAR(19),
   PRIMARY KEY(id)
 );
 
