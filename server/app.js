@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({
   extended: true,
 }));
-app.use(cors);
+app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 
 // GET routing
