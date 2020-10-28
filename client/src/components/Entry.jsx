@@ -1,12 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
+import Clock from './Clock.jsx';
 
 class Entry extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: Number(this.props.match.params.id),
+      id: parseInt(this.props.match.params.id),
       error: false,
       name: `Humble Bundle Number ${this.props.match.params.id}`,
       firstGame: 'Type One Game',
@@ -18,8 +18,8 @@ class Entry extends React.Component {
       numSold: 'Many',
       helper: `@num${this.props.match.params.id}helper`,
       logoURL: 'https://mg-fec-desc-images.s3-us-west-1.amazonaws.com/imgnotfound.png',
-      topCost: '',
-      countdown: '',
+      topCost: 25,
+      countdown: '2020-11-20 23:59:59',
     }
   }
 
@@ -32,8 +32,6 @@ class Entry extends React.Component {
   getContributorData() {}
 
   getItemData() {}
-
-  getNavData() {}
 
   getOwnedData() {
     const config = {
@@ -61,7 +59,7 @@ class Entry extends React.Component {
   }
 
   render () {
-    if (this.state.error || this.state.id < 1 || this.state.id > 100 || this.state.id !== this.state.id) {
+    if (this.state.error || parseInt(this.state.id) < 1 || parseInt(this.state.id) > 100 || this.state.id !== this.state.id) {
       return (
         <div>
           <main>please enter a valid bundle ID (1 - 100) in the URL path</main>
@@ -78,6 +76,7 @@ class Entry extends React.Component {
       <div className="worth">${this.state.value} of awesome stuff</div>
       <div className="min">Pay what you want, starting at just ${this.state.min}!</div>
       <div className="sold">{this.state.numSold} bundles sold</div>
+      <Clock countdown={this.state.countdown} id={this.state.id}/>
     </div>)
   }
 }

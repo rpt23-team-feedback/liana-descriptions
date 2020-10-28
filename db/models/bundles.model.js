@@ -25,7 +25,7 @@ const Bundle = db.define(
       type: DataTypes.INTEGER(1).UNSIGNED,
     },
     timesUp: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING(19),
     },
   },
   {
