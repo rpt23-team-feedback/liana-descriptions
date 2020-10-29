@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "jest --forceExit",
-    "plough": "mysql -u root < schema.sql",
+    "plough": "mysql -u root -p < schema.sql",
     "server-dev": "nodemon server/index.js",
     "seed": "npm run plough && node project-utils/seed.js",
     "build": "webpack --mode production",
