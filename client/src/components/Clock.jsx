@@ -8,7 +8,7 @@ const Clock = (props) => {
 
   useEffect(() => {
     const config = {
-      url: `/bundleInfo/${props.id}`,
+      url: `http://54.193.6.166:3663/bundleInfo/${props.id}`,
     }
     if (props.id >= 1 && props.id <= 100) {
       axios(config)
