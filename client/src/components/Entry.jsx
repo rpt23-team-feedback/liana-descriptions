@@ -40,7 +40,7 @@ class Entry extends React.Component {
     if (this.state.id >= 1 && this.state.id <= 100) {
       return axios(config)
       .then(({ data }) => {
-	if (data) {
+	      if (data) {
           this.setState({
             helper: data.helper,
             logoURL: data.logoURL,
