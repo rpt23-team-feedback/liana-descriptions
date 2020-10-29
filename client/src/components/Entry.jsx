@@ -35,7 +35,7 @@ class Entry extends React.Component {
 
   getOwnedData() {
     const config = {
-      url: `http://localhost:3663/bundleInfo/${this.state.id}`,
+      url: `/bundleInfo/${this.state.id}`,
     }
     if (this.state.id >= 1 && this.state.id <= 100) {
       return axios(config)
