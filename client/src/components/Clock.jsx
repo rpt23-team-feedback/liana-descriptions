@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { getSecondsTo, convertSeconds } from '../../../project-utils/clock-utils';
+import styles from '../styles/topStyledComponents.js';
 
 const Clock = (props) => {
 
@@ -48,12 +49,26 @@ const Clock = (props) => {
   }, [secondsTotal]);
 
   return (
-    <div>
-      <div className="daysLeft">{daysLeft} days left</div>
-      <div className="hoursLeft">{hoursLeft} hours left</div>
-      <div className="minutesLeft">{minutesLeft} minutes left</div>
-      <div className="secondsLeft">{secondsLeft} seconds left</div>
-    </div>
+    <styles.Clock>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <styles.Window className="daysLeft"><styles.Count>{daysLeft < 10 ? `0${daysLeft}` : daysLeft}</styles.Count> days</styles.Window>
+            </td>
+            <td>
+              <styles.Window className="hoursLeft"><styles.Count>{hoursLeft < 10 ? `0${hoursLeft}` : hoursLeft}</styles.Count> hours</styles.Window>
+            </td>
+            <td>
+              <styles.Window className="minutesLeft"><styles.Count>{minutesLeft < 10 ? `0${minutesLeft}` : minutesLeft}</styles.Count> min</styles.Window>
+            </td>
+            <td>
+              <styles.Window className="secondsLeft"><styles.Count>{secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft}</styles.Count> sec</styles.Window>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </styles.Clock>
   );
 };
 
