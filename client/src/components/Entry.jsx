@@ -14,7 +14,7 @@ class Entry extends React.Component {
       firstGame: 'One Night on Mount Typhon',
       secondGame: 'Twin Star',
       thirdGame: 'Dad Tepes: Dracula at Home',
-      charities: ['Walks Under Sky', 'crxssings'],
+      charities: ['Walks Under Sky', 'crossingx'],
       value: 150,
       min: 1,
       numSold: 'Many',
@@ -69,6 +69,7 @@ class Entry extends React.Component {
       );
     }
     return (
+    <div>
       <styles.Background>
         <GlobalFonts></GlobalFonts>
         <br></br>
@@ -112,6 +113,10 @@ class Entry extends React.Component {
             </tbody>
           </table>
         </styles.Infobar>
+        <styles.Modal>
+          <styles.Triangle></styles.Triangle>
+          <styles.Bubble>Get games collectively valued at up to ${this.state.value}.</styles.Bubble>
+        </styles.Modal>
         <br></br>
         <styles.Button className="get">
           <div>GET THE BUNDLE</div>
@@ -138,6 +143,7 @@ class Entry extends React.Component {
         </styles.BellWrapper>
         <br></br>
       </styles.Background>
+    </div>
     );
   }
 }

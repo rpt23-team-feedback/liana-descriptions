@@ -15,6 +15,7 @@ const Background = styled.div`
   text-shadow: 1px 1px 1px rgba(0,0,0,0.85);
   color: white;
   text-align: center;
+  -webkit-font-smoothing: antialiased;
 `;
 const Software = styled.img.attrs({
   src: 'https://mg-fec-desc-images.s3-us-west-1.amazonaws.com/gamesbundle.png',
@@ -157,6 +158,59 @@ const Count = styled.div`
   font-size: 1.75em;
 `;
 
+// Modal Styles
+const Modal = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 2;
+  width: 170px;
+  top: 40px;
+  visibility: hidden;
+  opacity: 1;
+  transition: visibility .2s ease-in-out,opacity .2s ease-in-out;
+  text-align: left;
+  background-color: white;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  color: black;
+  text-shadow: none;
+`;
+const Triangle = styled.div`
+
+`;
+const Bubble = styled.div`
+  width: 170px;
+`;
+
+// Header & Footer Styles
+const Header = styled.div`
+  box-sizing: content-box;
+  height: 66px;
+  pointer-events: none;
+  position: sticky;
+  width: auto;
+  z-index: 300;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.45);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0%;
+  transition: transform .2s linear;
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background-color: #494f5c;
+  border-radius: 1px;
+  text-transform: uppercase;
+  font-family: 'Sofia Pro Bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.85);
+  font-size: 0.625em;
+  font-weight: bold;
+  margin-top: 0.25em;
+  color: #c9d0de;
+  text-align: center;
+`;
+const Footer = styled.div``;
 
 const styles = {
     Background,
@@ -174,6 +228,11 @@ const styles = {
     Window,
     Count,
     Dot,
+    Modal,
+    Triangle,
+    Bubble,
+    Header,
+    Footer,
 };
 
 export default styles;
