@@ -107,3 +107,6 @@ client/dist/bundle.js
 
 # pollinator
 pollinator.js
+
+#db config
+dbconfig.js
