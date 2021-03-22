@@ -19,7 +19,6 @@ class Entry extends React.Component {
       helper: `@num${this.props.match.params.id}helper`,
       logoURL: 'https://mg-fec-desc-images.s3-us-west-1.amazonaws.com/imgnotfound.png',
       topCost: 25,
-      countdown: '2020-11-20 23:59:59',
     }
   }
 
@@ -76,7 +75,7 @@ class Entry extends React.Component {
       <div className="worth">${this.state.value} of awesome stuff</div>
       <div className="min">Pay what you want, starting at just ${this.state.min}!</div>
       <div className="sold">{this.state.numSold} bundles sold</div>
-      <Clock countdown={this.state.countdown} id={this.state.id}/>
+      <Clock id={this.state.id}/>
     </div>)
   }
 }
