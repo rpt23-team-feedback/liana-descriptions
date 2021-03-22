@@ -1,1 +1,1 @@
-# max-descriptions
+# liana-descriptions
